@@ -1,0 +1,13 @@
+body {
+  width: 500px;
+  margin: 20px auto;
+}
+
+#random-number-app * {
+  text-align: center;
+}
+
+#random-number-commentary * {
+  margin-right: 20px;
+  display: inline-block;
+}

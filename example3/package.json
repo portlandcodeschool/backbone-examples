@@ -9,6 +9,11 @@
   "author": "Portland Codeschool",
   "license": "MIT",
   "browserify": {
-    "transform": ["browserify-handlebars"]
+    "transform": [
+      "browserify-handlebars"
+    ]
+  },
+  "dependencies": {
+    "browserify-handlebars": "0.0.2"
   }
 }

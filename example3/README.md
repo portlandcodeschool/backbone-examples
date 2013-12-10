@@ -33,13 +33,9 @@ You'll notice that we're pulling in data from different parts of the model. It s
 
 ```javascript
   render: function () {
-    var context = {currently: {}, today: {}};
-    if (this.model.has('currently') && this.model.has('daily')) {
-      context = {
-        currently: this.model.get('currently'),
-        today: this.model.get('daily')[0]
-      }
-    }
+    var context = {}
+    context.currently = this.model.get('currently') || {};
+    context.summary = this.model.get('summary') || {};
     this.$el.html(context);
     return this;
   }

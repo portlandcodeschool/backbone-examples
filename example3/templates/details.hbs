@@ -1,0 +1,10 @@
+<h2>Current pressure: {{currently.pressure}}</h2>
+<h2>Current humidity: {{currently.humidity}}</h2>
+<h2>Current windspeed: {{currently.windSpeed}}</h2>
+<h2>Current Dew Point: {{currently.dewPoint}}</h2>
+<h2>Current visibility: {{currently.visibility}}</h2>
+
+{{#each alerts}}
+  <h1>{{title}}</h1>
+  <p>{{description}}</p>
+{{/each}}

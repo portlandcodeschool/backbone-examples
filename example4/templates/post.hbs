@@ -1,2 +1,7 @@
-<h2>{{title}}</h2>
-<p>{{content}}</p>
+<div class="post panel panel-default">
+  <h2 class="panel-heading">{{title}}</h2>
+  {{#if display}}
+   <p class="panel-body">{{content}}</p>
+  {{/if}}
+  <button type="button" id="destroy-btn" class="btn btn-danger">Delete Me!</button>
+</div>

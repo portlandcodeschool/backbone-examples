@@ -1,21 +1,23 @@
 $(function () { // wait for on-ready
 
   var PostsView = require('./views/posts');
+  var EntriesView = require('./views/entries');
 
   var app = {};
 
-  app.collections = {}
-  app.views = {}
+  app.collections = {};
+  app.views = {};
 
-  Post = Backbone.Model.extend({
+  var Post = Backbone.Model.extend({
     defaults: {
       title: "A post!",
       content: "Lorem Ipsum Baby!",
-      date: new Date()
+      date: new Date(),
+      display: true
     }
   });
 
-  Posts = Backbone.Collection.extend({
+  var Posts = Backbone.Collection.extend({
     model: Post,
     localStorage: new Backbone.LocalStorage("posts")
   });
@@ -23,6 +25,7 @@ $(function () { // wait for on-ready
   app.collections.posts = new Posts();
 
   app.views.posts = new PostsView({collection: app.collections.posts});
+  app.views.entries = new EntriesView({collection: app.collections.posts});
 
   app.collections.posts.fetch();
 

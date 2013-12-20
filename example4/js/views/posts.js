@@ -1,7 +1,7 @@
+var PostView = require('./post');
+
 var Posts = Backbone.View.extend({
   el: '#posts',
-
-  template: require('../../templates/post.hbs'),
 
   initialize: function () {
     this.listenTo(this.collection, 'add', this.render);
@@ -15,12 +15,9 @@ var Posts = Backbone.View.extend({
     this.$el.empty();
 
     this.collection.each(function (post) {
-      var $post = $(self.template(post.toJSON()));
-      $post.find('#destroy-btn').click(function () {
-        post.destroy();
-      });
+      var postView = new PostView({ model: post });
 
-      self.$el.append($post);
+      self.$el.append(postView.el);
     });
 
     return this;
